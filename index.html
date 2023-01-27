@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Brutto-Netto-Rechner</title>
+</head>
+<body>
+    <h1>Einkommenssteuer-Rechner</h1>
+    <section>
+        <form onsubmit="return false">
+            <article>
+                <legend>Bezahlen Sie die Steuern für zwei Personen im Splittingtarif?</legend>
+
+                <div>
+                    <input type="checkbox" id="checkZweitesEinkommen">
+                    <label for="checkZweitesEinkommen">Ja, zweites Einkommen angeben</label>
+                </div>
+            </article> 
+
+            <article>
+                <legend>Für welches Jahr möchten Sie die Steuer berechnen?</legend>
+
+                <input type="radio" id="zweiundzwanzig" name="jahr" value="2022" checked>
+                <label for="zweiundzwanzig">2022</label>
+
+                <input type="radio" id="einundzwanzig" name="jahr" value="2021">
+                <label for="einundzwanzig">2021</label>
+
+                <input type="radio" id="zwanzig" name="jahr" value="2020">
+                <label for="zwanzig">2020</label>
+            </article>
+
+            <article id="flexArticle">
+                <div class="outer">
+                    <legend class="required">Jahresbruttoeinkommen</legend>
+                    <div>
+                        <input type="number" id="einkommenEins" step="0.1" placeholder="1000,00" required autocomplete="off">    
+                        <p>€</p>     
+                    </div>  
+                </div>                             
+
+                <div id="optionalDiv" class="outer">
+                    <legend class="required">Jahresbruttoeinkommen der zweiten Person</legend>
+                    <div>
+                        <input type="number" id="einkommenZwei" step="0.1" placeholder="1000,00" autocomplete="off">    
+                        <p>€</p>     
+                    </div>  
+                </div>                             
+            </article>
+
+            <input type="submit" value="BERECHNEN">
+        </form>
+
+        <h5>Ergebnis</h5>
+
+        <article>
+            <p>Einkommenssteuerbetrag</p>
+            <h4 id="endsteuer">0,00€</h4>
+        </article>
+
+        <article>
+            <p id="labelEndpreis">Steuersatz</p>
+            <h4 id="endgehalt">0,00%</h4>
+        </article>
+    </section>
+
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

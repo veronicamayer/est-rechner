@@ -1,0 +1,20 @@
+@mixin fontStyles ($family, $size, $lineHeight) {
+    font-family: $family;
+    font-size: $size;
+    line-height: $lineHeight;
+}
+
+@mixin imageStyles ($width, $height, $objectFit) {
+    width: $width;
+    height: $height;
+    object-fit: $objectFit;
+}
+
+@mixin position ($position, $top, $bottom, $right, $left, $zIndex) {
+    position: $position;
+    top: $top;
+    bottom: $bottom;
+    right: $right;
+    left: $left;
+    z-index: $zIndex;    
+}
