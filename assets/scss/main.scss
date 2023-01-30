@@ -8,88 +8,22 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 5vh auto;
-    width: 600px;
-}
-
-h1 {
-    font-weight: 400;
-    font-size: 1.5rem;
-    padding-bottom: 2vh;
-}
-
 section {
-    border: 1px solid black;
-    border-radius: 5px;
+    width: 700px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.required:after {
+    content:" *";
+    color: red;
 }
 
-article {
-    background-color: #f3f6f8;
-    padding: 1vh 1vw;
-    margin-bottom: 0.5vh;
-    border-radius: 5px;
-    font-size: 0.9rem;
-
-    legend {
-        margin-bottom: 2vh;
-    }
-
-    input {
-        margin-bottom: 1.5vh;
-    }
-
-    label {
-        margin-right: 2vw;
-    }
-
-    .required {
-        margin-bottom: 1vh;
-    }
-
-    .required:after {
-        content:" *";
-        color: red;
-    }
-
-    #einkommenEins, #einkommenZwei {
-        margin-bottom: 0vh;
-    }
-
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-    }
-
-    input[type="number"] {
-        padding: 1vh 1vw;
-        border-radius: 5px;
-        border: 1px solid rgb(133, 133, 133);
-        width: 80px;
-        text-align: right;
-    }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
-#flexArticle {
-    display: flex;
-
-    .outer {
-        div {
-            display: flex;
-            align-items: center;
-    
-            p {
-                margin-left: 2vw;
-            }
-        }
-    }
+input[type="number"] {
+    width: 100px;
 }
 
 #optionalDiv {
@@ -97,29 +31,5 @@ article {
 }
 
 #optionalDiv.optionalDiv  {
-    padding-left: 6vw;
     display: block;
 }
-
-input[type="submit"] {
-    background-color: #236ca3;
-    color: white;
-    padding: 1vh 0;
-    width: 380px;
-    font-weight: 600;
-    border: none;
-    border-radius: 5px;
-    margin: 2vh auto;
-}
-
-h5 {
-    padding: 2vh 1vw;
-    color: #266fbc;
-    border-top: 1px solid black;
-}
-
-#endgehalt, #endsteuer {
-    padding: 2vh 0;
-    color: #133955;
-}
-

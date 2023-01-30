@@ -18,7 +18,9 @@ checkZweitesEinkommen.addEventListener("change", () => {
     }
 });
 
+//Unterschiedliche Werte je Jahr speichern
 submitForm.addEventListener("change", getYearlyVariables = () => {
+    
     jahr = document.querySelector('input[name="jahr"]:checked').value;
 
     switch (jahr) {
@@ -59,9 +61,6 @@ submitForm.addEventListener("change", getYearlyVariables = () => {
             fall3Var2 = 972.79;
             fall4Var1 = 8963.74;
             fall5Var1 = 17078.74;
-            return;
-    
-
     }
 });
 
@@ -71,17 +70,16 @@ submitForm.addEventListener("change", calculateGehalt = () => {
     switch (checkZweitesEinkommen.checked) {
         case true:
             gehalt = ((parseInt(einkommenEins.value) + parseInt(einkommenZwei.value)) / 2);
-            console.log(gehalt);
 
             calculateEst();
 
             steuer = steuer * 2;
             steuersatz = steuer * 100 / gehalt;
 
-            document.getElementById('endsteuer').innerHTML = `${steuer.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })}`;
+            document.getElementById('endsteuer').innerHTML = (isNaN(steuer)) ? '0,00€' : `${steuer.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })}`;
 
             steuersatz = `${steuersatz.toFixed(2)} %`;
-            document.getElementById('endgehalt').innerHTML = steuersatz.replace(".", ",");
+            document.getElementById('endgehalt').innerHTML = (steuersatz != "NaN %") ? steuersatz.replace(".", ",") :'0,00%';
 
             console.log("Ergebnisbereich formatiert: " + steuer + " und " + steuersatz);
 
@@ -89,16 +87,15 @@ submitForm.addEventListener("change", calculateGehalt = () => {
 
         case false:
             gehalt = parseInt(einkommenEins.value);
-            console.log(gehalt);
 
             calculateEst()
 
             steuersatz = steuer * 100 / gehalt;
 
-            document.getElementById('endsteuer').innerHTML = `${steuer.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })}`;
+            document.getElementById('endsteuer').innerHTML = (isNaN(steuer)) ? '0,00€' : `${steuer.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })}`;
 
             steuersatz = `${steuersatz.toFixed(2)} %`;
-            document.getElementById('endgehalt').innerHTML = steuersatz.replace(".", ",");
+            document.getElementById('endgehalt').innerHTML = (steuersatz != "NaN %") ? steuersatz.replace(".", ",") :'0,00%';
 
             console.log("Ergebnisbereich formatiert: " + steuer + " und " + steuersatz);
     }
@@ -145,8 +142,5 @@ function calculateEst() {
             
             steuer = 0.45 * gehalt - fall5Var1;
             steuersatz = steuer * 100 / gehalt;
-
-            return;
     }
 };
-
